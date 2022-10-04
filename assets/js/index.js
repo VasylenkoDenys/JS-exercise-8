@@ -26,6 +26,29 @@ class MyArray {
     return deletedValue;
   }
 
+  forEach(elem, i, arr){
+    
+  for (i=0; i < this.length; i++){
+    elem = this[i];
+    arr = Array.from(this);
+    
+    // console.log(`value: ${elem}`);
+    // console.log(`index: ${i}`);
+    // console.log(`array:`);
+    // console.log(arr);
+
+  } return;
+}
+
+  map(elem, i, arr){
+    let newArr = [];
+    elem = myArr[i];
+    for(i=0; i<this.length; i++){
+    newArr.push(elem);    
+    }
+    return newArr;
+  }
+
   push(...elems) {
     // добавить элементы в конец массива
     for (let i = 0; i < elems.length; i++) {
@@ -38,3 +61,6 @@ class MyArray {
 
 const myArr = new MyArray();
 myArr.push(10, 20, 30, 55, 66);
+const newArr = myArr.map(function(elem, i, arr){
+  return elem*2;
+});
