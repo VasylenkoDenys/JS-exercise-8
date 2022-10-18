@@ -37,17 +37,18 @@ class MyArray {
     // console.log(`array:`);
     // console.log(arr);
 
-  } return;
+  };
 }
 
-  map(elem, i, arr){
+  map(callback){
+    let arr = Array.from(this);
     let newArr = [];
-    elem = myArr[i];
-    for(i=0; i<this.length; i++){
-    newArr.push(elem);    
-    }
+    for(const elem of arr){
+      let newElem = callback(elem);
+      newArr.push((newElem));    
+    };
     return newArr;
-  }
+  };
 
   push(...elems) {
     // добавить элементы в конец массива
@@ -56,11 +57,9 @@ class MyArray {
     }
     //  возвращает новую длину массива
     return this.length;
-  }
+  };
 }
 
 const myArr = new MyArray();
-myArr.push(10, 20, 30, 55, 66);
-const newArr = myArr.map(function(elem, i, arr){
-  return elem*2;
-});
+myArr.push(11, 22, 33, 56, 67);
+const newArr = myArr.map((elem)=>elem*2);
